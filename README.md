@@ -11,17 +11,17 @@ Build using CMake (cmake-gui)
 
 Create own build directory(any name, any place)
 
-Select source directory and build directory
--> MinGW Makefiles
--> defaults
--> Configure
--> Generate 
+Select source directory(where README.md file is) and build directory
+ - MinGW Makefiles
+ - defaults
+ - Configure
+ - Generate 
 
 Go to build directory
 
 mingw32-make 
 
-Go to src 
+Go to src directory (build/src)
 
 run exe
 
