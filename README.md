@@ -12,10 +12,10 @@ Build using CMake (cmake-gui)
 Create own build directory(any name, any place)
 
 Select source directory(where README.md file is) and build directory
- - MinGW Makefiles
- - defaults
- - Configure
- - Generate 
+ - -> MinGW Makefiles
+ - -> defaults
+ - -> Configure
+ - -> Generate 
 
 Go to build directory
 
