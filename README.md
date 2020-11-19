@@ -16,6 +16,9 @@ Select source directory(where README.md file is) and build directory
  - -> defaults
  - -> Configure
  - -> Generate 
+ 
+current path root of the project(were README.md file is)
+ - cmake -S . -B ../where/build -G"MinGW Makefiles" (it will do same job)
 
 Go to build directory
 
