@@ -23,26 +23,28 @@ void ShowWindowRightClickEvent(bool &showWindow, std::vector<T> &vector, int &in
 			//fvalue = vector[index].getValue();
 			
 			if (ImGui::DragFloat("value", &fvalue, 5.0f, 0.0f, 100.0f, "%.2f")){
-				//vector.setValue(fvalue);
+				//vector[index].setValue(fvalue);
 				std::cout << fvalue << std::endl;
 			}
 			
 			if (ImGui::Button("Remove")) {
 				//remove this-> vector[index]
-				//vector.erase(vector.begin() + index);
+				vector.erase(vector.begin() + index);
 				std::cout << "removed" <<std::endl;
 				showWindow=false;
+				index = -1;
 			}
 			
 			if (ImGui::Button("Close")) {
 				showWindow=false;
+				index = -1;
 			}
 			
             ImGui::End();
 		}
 	} 
-	else {
+	//else {
 		//reset value
-		index = -1;
-	}
+		//index = -1;
+	//}
 }
