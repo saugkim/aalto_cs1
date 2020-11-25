@@ -2,26 +2,18 @@
 
 class WireGraphicsItem {
   public:
-  
-    WireGraphicsItem(float begin = 100, float mid = 200, float end = 300) 
-      : begin_(begin), mid_(mid), end_(end), grabbed_(false) {
-      
-	      
-        sf::Vertex wire_[] = {
-	      sf::Vertex(sf::Vector2f(begin_, begin_)),
-		  sf::Vertex(sf::Vector2f(mid_, mid_)),
-	      sf::Vertex(sf::Vector2f(end_, end_))
-      };
+    WireGraphicsItem(float begin = 100, float mid = 100, float end = 300) 
+      : begin_(begin), mid_(mid), end_(end), grabbed_(false) {      
+      sf::VertexArray wire_(sf::LineStrip, 2);
 
-      color_ = sf::Color::Red;
-      wire_[0].color = color_;
-      wire_[1].color = color_;
-      wire_[2].color = color_;
+      wire_[0] = sf::Vector2f(begin_, mid_);
+      wire_[1] = sf::Vector2f(mid_, end_);
+      wire_[0].color = sf::Color::Red;
       text_ = "Wire";
       Draw();
     };
 
-    //sf::Vertex& GetWire();
+    sf::VertexArray& GetWire();
 
     void SetCoordinates(float begin, float mid, float end);
 
@@ -29,15 +21,14 @@ class WireGraphicsItem {
     bool IsGrabbed();
 
     void Draw();
- 
+  protected:
+    sf::VertexArray wire_;
+    sf::Color color_;
+
   private:
     float begin_;
     float mid_;
     float end_;
     const char* text_;
     bool grabbed_;
- protected:
-    sf::Color color_;
-	sf::Vertex wire_[];
-
 };
